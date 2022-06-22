@@ -1,25 +1,21 @@
-import styled, { keyframes } from "styled-components";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 import GoogleBadge from "../assets/images/play-store2x.png";
 import AppleBadge from "../assets/images/badge-apple4x.png";
 
-const FadeIn = keyframes`
-  from{
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to{
-    opacity: 1;
-    transform: none;
-  }
-`;
+interface VisibleTrigger {
+  isActive: boolean;
+}
 
-const Container = styled.div`
+const Container = styled.div<VisibleTrigger>`
   width: 417px;
   height: 64px;
   margin: 50px 0px 140px 623px;
   white-space: nowrap;
-  animation: ${FadeIn} 700ms ease-out 200ms;
+  opacity: ${(props) => (props.isActive ? 1 : 0)};
+  transform: translateY(${(props) => (props.isActive ? "0px" : "10px")});
+  transition: all 700ms ease-in-out 200ms;
 `;
 
 const Badge = styled.div`
@@ -47,8 +43,14 @@ const AppStore = styled(Badge)`
 `;
 
 function AwardContainer() {
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    setIsActive(true);
+  }, [isActive]);
+
   return (
-    <Container>
+    <Container isActive={isActive}>
       <PlayStore>
         2018 구글 플레이스토어
         <br />
