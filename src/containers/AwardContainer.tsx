@@ -19,7 +19,7 @@ const Container = styled.div`
   height: 64px;
   margin: 50px 0px 140px 623px;
   white-space: nowrap;
-  animation: ${FadeIn} 700ms ease-out 100ms;
+  animation: ${FadeIn} 700ms ease-out 200ms;
 `;
 
 const Badge = styled.div`

@@ -24,7 +24,7 @@ const Container = styled.div`
   background-size: 400px 338px;
   padding-top: 280px;
   text-align: center;
-  animation: ${FadeIn} 700ms ease-out 100ms;
+  animation: ${FadeIn} 700ms ease-out 0ms;
 `;
 
 function LogoContainer() {
