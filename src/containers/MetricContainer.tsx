@@ -1,32 +1,20 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
 
 import MetricItem from "../components/metric/MetricItem";
 import MetricText from "../components/metric/MetricText";
+import useRiseFadeIn from "../hooks/useRiseFadeIn";
+import RiseFadeIn from "../utils/RiseFadeIn";
 
-interface VisibleTrigger {
-  isActive: boolean;
-}
-
-const Container = styled.div<VisibleTrigger>`
+const Container = styled(RiseFadeIn)`
   margin-left: 623px;
   padding-top: 150px;
-  opacity: ${(props) => (props.isActive ? 1 : 0)};
-  transform: translateY(${(props) => (props.isActive ? "0px" : "10px")});
-  transition: all 700ms ease-in-out 100ms;
 `;
 
 function MetricContainer() {
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    setIsActive(true);
-  }, [isActive]);
-
-  console.log("Metric rendered!!");
+  const trigger = useRiseFadeIn();
 
   return (
-    <Container isActive={isActive}>
+    <Container isActive={trigger} duration={700} delay={100} offsetY={10}>
       <MetricItem>
         <MetricText strongText="700만 명" normalText="의 여행자" />
       </MetricItem>

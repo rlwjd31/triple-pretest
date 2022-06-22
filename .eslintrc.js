@@ -24,3 +24,4 @@ module.exports = {
 
 // Unexpected console statement.eslintno-console
 // add "no-console": process.env.NODE_ENV === "production" ? "error" : "off" to rule
+// to debug with console.log

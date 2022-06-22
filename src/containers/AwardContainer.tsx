@@ -1,35 +1,16 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import GoogleBadge from "../assets/images/play-store2x.png";
 import AppleBadge from "../assets/images/badge-apple4x.png";
+import Badge from "../components/award/Badge";
+import useRiseFadeIn from "../hooks/useRiseFadeIn";
+import RiseFadeIn from "../utils/RiseFadeIn";
 
-interface VisibleTrigger {
-  isActive: boolean;
-}
-
-const Container = styled.div<VisibleTrigger>`
+const Container = styled(RiseFadeIn)`
   width: 417px;
   height: 64px;
   margin: 50px 0px 140px 623px;
   white-space: nowrap;
-  opacity: ${(props) => (props.isActive ? 1 : 0)};
-  transform: translateY(${(props) => (props.isActive ? "0px" : "10px")});
-  transition: all 700ms ease-in-out 200ms;
-`;
-
-const Badge = styled.div`
-  font-size: 14px;
-  height: 54px;
-  line-height: 22px;
-  padding: 5px 0px 5px 62px;
-  display: inline-block;
-  margin-right: 39px;
-  background-position: left top;
-  background-repeat: no-repeat;
-  background-size: 54px 54px;
-  font-weight: bold;
-  color: rgba(58, 58, 58, 0.8);
 `;
 
 const PlayStore = styled(Badge)`
@@ -43,14 +24,10 @@ const AppStore = styled(Badge)`
 `;
 
 function AwardContainer() {
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    setIsActive(true);
-  }, [isActive]);
+  const trigger = useRiseFadeIn();
 
   return (
-    <Container isActive={isActive}>
+    <Container isActive={trigger} duration={700} delay={200} offsetY={10}>
       <PlayStore>
         2018 구글 플레이스토어
         <br />
