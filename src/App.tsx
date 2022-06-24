@@ -5,9 +5,10 @@ import MetricContainer from "./containers/MetricContainer";
 import AwardContainer from "./containers/AwardContainer";
 import GlobalStyle from "./styles/GlobalStyle";
 
-const AppContainer = styled.div`
+const Container = styled.div`
   display: flex;
   width: 100vw;
+  height: 552px;
   justify-content: center;
   margin: 0px;
   padding: 0px;
@@ -29,13 +30,13 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <AppContainer>
+      <Container>
         <ContentCotainer>
           <LogoContainer />
           <MetricContainer />
           <AwardContainer />
         </ContentCotainer>
-      </AppContainer>
+      </Container>
     </>
   );
 }

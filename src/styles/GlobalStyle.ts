@@ -52,6 +52,7 @@ table {
   box-sizing: border-box;
 }
 body{
+  padding-top: 100px;
   font-family: sans-serif;
 }
 a {
