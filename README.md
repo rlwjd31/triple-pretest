@@ -55,9 +55,9 @@
 .
 ├── assets
 │ └── images
-│ ├── badge-apple4x.png
-│ ├── play-store2x.png
-│ └── triple2x.png
+│   ├── badge-apple4x.png
+│   ├── play-store2x.png
+│   └── triple2x.png
 ├── components
 │ ├── award
 │ │ ├── AppStore.tsx
