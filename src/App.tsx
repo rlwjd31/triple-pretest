@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import LogoContainer from "./containers/LogoContainer";
-import MetricContainer from "./containers/MetricContainer";
-import AwardContainer from "./containers/AwardContainer";
+import LogoContainer from "./components/containers/LogoContainer";
+import MetricContainer from "./components/containers/MetricContainer";
+import AwardContainer from "./components/containers/AwardContainer";
 import GlobalStyle from "./styles/GlobalStyle";
 
 const Container = styled.div`

@@ -1,24 +1,24 @@
 import styled from "styled-components";
 
-import MetricItem from "../components/metric/MetricItem";
-import MetricText from "../components/metric/MetricText";
-import useRiseFadeIn from "../hooks/useRiseFadeIn";
-import RiseFadeIn from "../utils/RiseFadeIn";
-import useCountUp from "../hooks/useCountUp";
+import MetricItem from "../metric/MetricItem";
+import MetricText from "../metric/MetricText";
+import useFadeInRise from "../../hooks/useFadeInRise";
+import FadeInRise from "../../utils/FadeInRise";
+import useCountUp from "../../hooks/useCountUp";
 
-const Container = styled(RiseFadeIn)`
+const Container = styled(FadeInRise)`
   margin-left: 623px;
   padding-top: 150px;
 `;
 
-function MetricContainer() {
-  const trigger = useRiseFadeIn();
+const MetricContainer = () => {
+  const trigger = useFadeInRise();
   const numOfTravelers = useCountUp(2000, 700);
   const numOfTravelRevies = useCountUp(2000, 100);
   const numOfTravelSchedules = useCountUp(2000, 470);
 
   return (
-    <Container isActive={trigger} duration={700} delay={100} offsetY={10}>
+    <Container isActive={trigger} duration={700} delay={100} offsetY={-10}>
       <MetricItem>
         <MetricText
           strongText={`${numOfTravelers}만 명`}
@@ -39,6 +39,6 @@ function MetricContainer() {
       </MetricItem>
     </Container>
   );
-}
+};
 
 export default MetricContainer;

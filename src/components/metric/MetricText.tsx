@@ -1,9 +1,6 @@
-interface Text {
-  strongText: string;
-  normalText: string;
-}
+import MetricTextProps from "../../interfaces/MetricTextProps";
 
-function MetricText({ strongText, normalText }: Text) {
+const MetricText = ({ strongText, normalText }: MetricTextProps) => {
   return (
     <>
       <strong>
@@ -12,6 +9,6 @@ function MetricText({ strongText, normalText }: Text) {
       {normalText}
     </>
   );
-}
+};
 
 export default MetricText;

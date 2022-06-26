@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFadeIn = () => {
+const useFadeInRise = () => {
   const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
@@ -10,4 +10,4 @@ const useFadeIn = () => {
   return trigger;
 };
 
-export default useFadeIn;
+export default useFadeInRise;

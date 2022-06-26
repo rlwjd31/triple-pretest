@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
 
-import easeOutCubic from "../utils/easeOutCubic";
+import { easeOutCubic } from "../utils/easingFunctions";
 import UseCountUpProps from "../interfaces/useCountUpProps";
 
 const useCountUp: UseCountUpProps = (duration, endCount) => {
   const [count, setCount1] = useState(0);
   const stepPeriod = 1000 / 60;
+  const totalSteps = Math.round(duration / stepPeriod);
 
   useEffect(() => {
     let step = 0;
-    const numOfSteps = Math.round(duration / stepPeriod);
 
     const counter = setInterval(() => {
-      if (step === numOfSteps) {
+      if (step === totalSteps) {
         clearInterval(counter);
       }
 
       step += 1;
-      const progressRate = easeOutCubic(step / numOfSteps);
+      const progressRate = easeOutCubic(step / totalSteps);
+      // console.log(`preogressionRate : ${progressRate}`);
       setCount1(Math.floor(endCount * progressRate));
     }, stepPeriod);
   }, []);
@@ -26,7 +27,3 @@ const useCountUp: UseCountUpProps = (duration, endCount) => {
 };
 
 export default useCountUp;
-
-// export default function useCountUp() {
-//   console.log("something!!");
-// }
