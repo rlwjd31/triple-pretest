@@ -53,7 +53,6 @@
 
 ```bash
 .
-├── App.tsx
 ├── assets
 │ └── images
 │ ├── badge-apple4x.png
@@ -76,15 +75,17 @@
 ├── hooks
 │ ├── useCountUp.ts
 │ └── useFadeInRise.ts
-├── index.tsx
 ├── interfaces
 │ ├── FadeInRiseProps.ts
 │ ├── MetricTextProps.ts
 │ └── useCountUpProps.ts
-├── react-app-env.d.ts
 ├── styles
 │ └── GlobalStyle.ts
 └── utils
-├── FadeInRise.ts
-└── easingFunctions.ts
+│  ├── FadeInRise.ts 
+│  └── easingFunctions.ts
+├── App.tsx
+├── index.tsx
+├── react-app-env.d.ts
+
 ```
