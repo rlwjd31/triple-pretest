@@ -18,6 +18,11 @@ module.exports = {
   ],
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    "linebreak-style": [
+      "error",
+      require("os").EOL === "\r\n" ? "windows" : "unix",
+    ],
+    "prettier/prettier": ["error", { endOfLine: "auto" }],
     // 개별 규칙
   },
 };
@@ -25,3 +30,6 @@ module.exports = {
 // Unexpected console statement.eslintno-console
 // add "no-console": process.env.NODE_ENV === "production" ? "error" : "off" to rule
 // to debug with console.log
+
+// fix "delete 'cr' prettier/prettier" error
+// fixed new line format with LF
