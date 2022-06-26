@@ -71,8 +71,8 @@
 │ ├── logo
 │ │ └── Text.tsx
 │ └── metric
-│ ├── MetricItem.tsx
-│ └── MetricText.tsx
+│   ├── MetricItem.tsx
+│   └── MetricText.tsx
 ├── hooks
 │ ├── useCountUp.ts
 │ └── useFadeInRise.ts
